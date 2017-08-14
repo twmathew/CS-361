@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset = "utf=8">
+     <style>
+          /* Always set the map height explicitly to define the size of the div
+          * element that contains the map. */
+          #map {
+               height: 100%;
+          }
+          /* Optional: Makes the sample page fill the window. */
+          html, body {
+               height: 100%;
+               margin: 0;
+               padding: 0;
+          }
+     </style>
+	<title> GPS Locator</title>
+	<script src = "geoLocate.js"></script>
+
+
+</head>
+<body>
+<h1>GPS Locator</h1>
+<h2>Coordinates will load once data is submitted</h2>
+<p><span>Pet Latitude: </span><span id = "lat"></span></p>
+<p><span>Pet Longitude: </span><span id = "long"></span></p>
+
+<p><span>User Latitude: </span><span id = "userlat"></span></p>
+<p><span>User Longitude: </span><span id = "userlong"></span></p>
+
+     <form id = "macForm">
+          <fieldset>
+               <legend>MAC Addresses (pet location, test will be in CA)</legend>
+               <label for="mac1">Enter MAC Address 1 (for testing purposes, use 00:25:9c:cf:1c:ac) </label>
+               <input type="text" name="mac1" id="mac1" />
+			<br>
+               <label for="mac2">Enter MAC Address 2 (for testing purposes, use 00:25:9c:cf:1c:ad) </label>
+               <input type="text" name="mac2" id="mac2" />
+			<br>
+          </fieldset>
+     </form>
+	 
+	      <form id = "cellForm">
+          <fieldset>
+               <legend>Cell Tower Info (your location, test will be in Spain)</legend>
+               <label for="cid">Enter CID (for testing purposes, use 21532831) </label>
+               <input type="text" name="cid" id="cid" />
+			<br>
+               <label for="lac">Enter LAC (for testing purposes, use 2862) </label>
+               <input type="text" name="lac" id="lac" />
+			<br>
+				<label for="mcc">Enter MCC (for testing purposes, use 214) </label>
+               <input type="text" name="mcc" id="mcc" />
+			<br>
+               <label for="mnc">Enter MNC (for testing purposes, use 7) </label>
+               <input type="text" name="mnc" id="mnc" />
+			<br>
+
+          </fieldset>
+		                 <input type="button" value="Submit" onclick="initMap()" id="macSubmit"/>
+     </form>
+
+
+     <br>
+     <fieldset>
+          <div> Or, click here to go back to the User Profile page:</div>
+          <button onclick="location.href = 'http://web.engr.oregonstate.edu/~olareyp/CS361/index.php'">
+               Go Back
+          </button>
+     </fieldset>
+
+     <div id="map"></div>
+
+     	     <script async defer
+             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBi5WiwpTdn9kACD9XKV2uWvvYnZVK848o">
+     </script>
+     
+      
+</body>
+</html>
